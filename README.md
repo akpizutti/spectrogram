@@ -18,7 +18,10 @@ python spectrogram2audio.py <input_image>
 ```
 Interprets an image as a spectrogram and generates an audio file from it by calculating the Inverse Fast Fourier Transform (IFFT) of each column of the image.
 
-![savinglight wav_spectrogram](https://github.com/akpizutti/spectrogram/assets/91564888/7e8f44c9-bdb5-425b-9a7e-74399e8aadbf)
+
+![trance4 wav_spectrogram](https://github.com/akpizutti/spectrogram/assets/91564888/3324c3b2-3668-4c41-ae81-468ff4ef36c1)
+Shown above is the spectrogram generated from [this audio file](https://drive.google.com/file/d/1Q8v6mDBkJEoBS7pD9hH4t_C0DbhDrdve/view?usp=sharing) (music composed by myself).
+
 
 
 
