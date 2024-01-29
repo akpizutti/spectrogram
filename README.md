@@ -10,6 +10,9 @@ python spectrogram.py <input_wav_file>
 Takes an audio file in WAV format and generates an image named `<input_wav_file>_spectrogram.png`. Each column of the image represents the result of the Fast Fourier Transform (FFT) of a single block from the audio file.
 Height of the spectrogram image will be equal to `block_size / 2` and width will be equal to `floor(file_length / block_size)`.
 
+![trance4 wav_spectrogram](https://github.com/akpizutti/spectrogram/assets/91564888/3324c3b2-3668-4c41-ae81-468ff4ef36c1)
+Shown above is the spectrogram generated from [this audio file](https://drive.google.com/file/d/1Q8v6mDBkJEoBS7pD9hH4t_C0DbhDrdve/view?usp=sharing) (music composed by myself).
+
 # Audio generation from spectrogram
 
 Usage:
@@ -17,11 +20,6 @@ Usage:
 python spectrogram2audio.py <input_image>
 ```
 Interprets an image as a spectrogram and generates an audio file from it by calculating the Inverse Fast Fourier Transform (IFFT) of each column of the image.
-
-
-![trance4 wav_spectrogram](https://github.com/akpizutti/spectrogram/assets/91564888/3324c3b2-3668-4c41-ae81-468ff4ef36c1)
-Shown above is the spectrogram generated from [this audio file](https://drive.google.com/file/d/1Q8v6mDBkJEoBS7pD9hH4t_C0DbhDrdve/view?usp=sharing) (music composed by myself).
-
 
 
 
