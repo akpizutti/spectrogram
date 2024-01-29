@@ -29,9 +29,9 @@ else:
 
     # print(data)
 
-    plot(data)
-    show()
-    exit()
+    #plot(data)
+    #show()
+    #exit()
 
     print("Samplerate: " + str(samplerate))
     print("Length: " + str(file_length) + " samples")
