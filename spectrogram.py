@@ -20,7 +20,7 @@ if(len(sys.argv) < 2 ):
     print("Numero de argumentos invalido.")
 else:
     filename = sys.argv[1]
-    block_size = 8192 
+    block_size = 4096 
 
     samplerate,data = wavfile.read(filename)
     file_length, channels = data.shape
@@ -28,6 +28,10 @@ else:
     blocks = int(floor(file_length / block_size))
 
     # print(data)
+
+    plot(data)
+    show()
+    exit()
 
     print("Samplerate: " + str(samplerate))
     print("Length: " + str(file_length) + " samples")
@@ -62,12 +66,15 @@ else:
 
         #calculate FFT of a single block
         spectrum = fft(mono[i*block_size::], n=block_size)
+        
 
-        amplitudes = abs(spectrum[0:int(block_size/2)])
+        amplitudes = abs(spectrum[0:int(block_size/2)]) * 2 
         # frequency = n * Fs / N, where n is the index in the array, Fs is the sample rate and N is the size of the FFT.
 
 
         spectrogram[i] = amplitudes
+
+
 
     print(spectrogram.shape)
     
@@ -99,6 +106,7 @@ else:
         
 
         max = amax(log(spectrogram))
+        print(max)
 
 
         out_array = (log(spectrogram) / max * 255).astype(uint8)
