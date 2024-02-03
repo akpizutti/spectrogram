@@ -29,9 +29,9 @@ else:
 
     # print(data)
 
-    #plot(data)
-    #show()
-    #exit()
+    # plot(data)
+    # show()
+    # exit()
 
     print("Samplerate: " + str(samplerate))
     print("Length: " + str(file_length) + " samples")
@@ -61,6 +61,8 @@ else:
 
     
     spectrogram = empty((blocks, int(block_size/2)))
+    
+    
     for i in range(blocks):
         # print("Processing block " + str(i))
 
@@ -80,15 +82,7 @@ else:
     
 
 
-
-
     spectrogram = spectrogram.transpose()
-
-
-
-
-
-
 
 
 
@@ -105,11 +99,11 @@ else:
         # pcolormesh(t, f, log(spectrogram), antialiased=False)
         
 
-        max = amax(log(spectrogram))
-        print(max)
+        max_ = amax(log(spectrogram))
+        # print(max)
+        
 
-
-        out_array = (log(spectrogram) / max * 255).astype(uint8)
+        out_array = flip((log(spectrogram) / max_ * 255).astype(uint8), 0)
         # print(out_array)
 
         # imshow(out_array)
